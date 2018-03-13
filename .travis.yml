@@ -10,5 +10,4 @@ env:
 before_install:
   - scripts/before_install.sh
 script:
-  - scripts/script.shs
-  
+  - scripts/script.sh
