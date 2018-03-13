@@ -1,11 +1,15 @@
 sudo: true
-dist: trusty
+os:
+- linux
+- osx
 cache: false
 env:
 - URL=https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
 before_install:
-- sudo apt-get -qq update
-- sudo apt-get install -y wget
+- if [["$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get -qq update
+- if [["$TRAVIS_OS_NAME" == "osx" ]]; then sudo brew update
+- if [["$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y wget
+- if [["$TRAVIS_OS_NAME" == "osx" ]]; then sudo brew install wget
 - node --version
 - uname -a
 - npm install -g bunyan
