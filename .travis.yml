@@ -4,6 +4,7 @@ os:
 cache: false
 env:
 - URL=https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
+- JWTKEYFILE=assets/server.key
 before_install:
 - scripts/before_install.sh
 script:
