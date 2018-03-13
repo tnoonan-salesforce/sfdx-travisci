@@ -4,6 +4,7 @@ cache: false
 env:
 - URL=https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
 before_install:
+- npm install -g bunyan
 - openssl aes-256-cbc -K $encrypted_444a0b982a79_key -iv $encrypted_444a0b982a79_iv
   -in assets/server.key.enc -out assets/server.key -d
 - export SFDX_AUTOUPDATE_DISABLE=true
@@ -18,8 +19,7 @@ before_install:
 - sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile assets/server.key
   --username $USERNAME --setdefaultdevhubusername -a HubOrg
 script:
-- sfdx force:org:create -v HubOrg -s -f config/project-scratch-def.json -a ciorg --loglevel trace &&
-  sfdx force:source:push -u ciorg && sfdx force:apex:test:run -u ciorg -c -r human
+- sfdx force:org:create -v HubOrg -s -f config/project-scratch-def.json -a ciorg --loglevel trace
+- bunyan ~/.sfdx/sfdx.log
+- sfdx force:source:push -u ciorg && sfdx force:apex:test:run -u ciorg -c -r human
 - sfdx force:org:delete -u ciorg -p
-after_failure:
-- cat ~/.sfdx/sfdx.log
