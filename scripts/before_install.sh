@@ -15,25 +15,11 @@ else
     exit 1
 fi
 
-if ! [ -x "node" ]; then 
-    echo "node is not installed"
-    exit 1
-fi 
-
 node --version
 uname -a
 
-if ! [ -x "bunyan" ]; then 
-    echo "Bunyan not installed. Installing ...."
-    npm install -g bunyan    
-fi
-
-if [ -x "openssl" ]; then 
-    openssl aes-256-cbc -K $encrypted_444a0b982a79_key -iv $encrypted_444a0b982a79_iv -in assets/server.key.enc -out assets/server.key -d
-else
-    echo "Please install openssl"
-fi
-
+npm install -g bunyan
+openssl aes-256-cbc -K $encrypted_444a0b982a79_key -iv $encrypted_444a0b982a79_iv -in assets/server.key.enc -out assets/server.key -d
 
 export SFDX_AUTOUPDATE_DISABLE=true
 export SFDX_USE_GENERIC_UNIX_KEYCHAIN=true
