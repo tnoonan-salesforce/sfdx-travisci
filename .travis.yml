@@ -3,6 +3,8 @@ os:
   - linux
 language:
   - node_js
+node_js:
+  - "9"
 cache: false
 env:
   global: 
