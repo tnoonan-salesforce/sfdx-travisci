@@ -1,11 +1,13 @@
 sudo: true
 os:
-- linux
+  - linux
+language:
+  - JAVASCRIPT 
 cache: false
 env:
-- URL=https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
-- JWTKEYFILE=assets/server.key
+  - URL=https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
+  - JWTKEYFILE=assets/server.key
 before_install:
-- scripts/before_install.sh
+  - scripts/before_install.sh
 script:
-- scripts/script.sh
+  - scripts/script.sh
