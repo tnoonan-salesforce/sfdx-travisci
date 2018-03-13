@@ -5,8 +5,9 @@ language:
   - node_js
 cache: false
 env:
-  - JWTKEYFILE=assets/server.key
-  - URL=https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
+  global: 
+    - JWTKEYFILE=assets/server.key
+    - URL=https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
 before_install:
   - scripts/before_install.sh
 script:
