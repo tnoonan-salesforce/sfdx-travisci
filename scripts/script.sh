@@ -9,8 +9,8 @@ sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile $JWTKEYFILE --use
 sfdx force:org:create -v HubOrg -s -f config/project-scratch-def.json -a ciorg --loglevel trace
 
 if [ $? -ne 0 ]; then
-    exit "Failed to create org"
     bunyan ~/.sfdx/sfdx.log
+    exit 1
 fi
 
 # push source
