@@ -1,0 +1,1 @@
+FROM travisci/ci-garnet:packer-1512502276-986baf0
