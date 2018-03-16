@@ -29,6 +29,6 @@ wget -qO- $URL | tar xJf -
 "./sfdx/install"
 
 export PATH=./sfdx/$(pwd):$PATH
-sfdx update
+sfdx update master
 sfdx --version
 sfdx plugins --core
