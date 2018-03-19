@@ -31,6 +31,6 @@ wget -qO- $URL | tar xJf -
 
 export PATH=./sfdx/$(pwd):$PATH
 sfdx update master
-npm install salesforce-alm --registry http://ec2-54-152-120-49.compute-1.amazonaws.com:4873 
+sfdx plugins:install salesforce-alm
 sfdx --version
 sfdx plugins --core
