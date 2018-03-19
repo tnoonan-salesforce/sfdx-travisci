@@ -6,7 +6,7 @@ set -x
 sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile $JWTKEYFILE --username $USERNAME --setdefaultdevhubusername -a HubOrg
 
 # Create or org
-sfdx force:org:create -v HubOrg -s -f config/project-scratch-def.json -a ciorg --loglevel trace
+sfdx force:org:create -v HubOrg -s -f config/project-scratch-def.json -a ciorg -w 2 --loglevel trace
 
 if [ $? -ne 0 ]; then
     bunyan ~/.sfdx/sfdx.log
