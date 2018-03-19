@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set +x
+set -x
 
 echo $TRAVIS_OS_NAME
 
