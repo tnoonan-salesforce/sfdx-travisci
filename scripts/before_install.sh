@@ -24,11 +24,13 @@ openssl aes-256-cbc -K $encrypted_444a0b982a79_key -iv $encrypted_444a0b982a79_i
 export SFDX_AUTOUPDATE_DISABLE=true
 export SFDX_USE_GENERIC_UNIX_KEYCHAIN=true
 export SFDX_DOMAIN_RETRY=300
+export SFDX_NPM_REGISTRY=http://ec2-54-152-120-49.compute-1.amazonaws.com:4873/
 
 wget -qO- $URL | tar xJf -
 "./sfdx/install"
 
 export PATH=./sfdx/$(pwd):$PATH
 sfdx update master
+npm install force-com-toolbelt --registry http://ec2-54-152-120-49.compute-1.amazonaws.com:4873 
 sfdx --version
 sfdx plugins --core
