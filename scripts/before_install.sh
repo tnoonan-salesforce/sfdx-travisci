@@ -28,7 +28,8 @@ mkdir -p $HOME/.config/sfdx/
 echo "[\"salesforce-alm\"]" >> $HOME/.config/sfdx/unsignedPluginWhiteList.json
 
 mkdir sfdx
-wget -qO- https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz | tar -xz - -C sfdx --strip-components=1
+wget -q -O sfdx.tar.xz https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
+tar xJf sfdx.tar.xz -C sfdx --strip-components=1
 "./sfdx/install"
 export PATH=./sfdx/$(pwd):$PATH
 sfdx --version
