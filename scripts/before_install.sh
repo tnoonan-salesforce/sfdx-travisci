@@ -27,9 +27,9 @@ export SFDX_NPM_REGISTRY=http://ec2-52-207-137-64.compute-1.amazonaws.com:4873/
 mkdir -p $HOME/.config/sfdx/
 echo "[\"salesforce-alm\"]" >> $HOME/.config/sfdx/unsignedPluginWhiteList.json
 
-npm install -g sfdx-cli
-echo 'y' > input
+wget -qO- https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz | tar xJf -
 export PATH=./sfdx/$(pwd):$PATH
 sfdx --version
+echo 'y' > input
 sfdx plugins:install salesforce-alm < input
 sfdx plugins
