@@ -4,13 +4,13 @@ set -x
 
 echo $TRAVIS_OS_NAME
 
-if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then 
+if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
     sudo apt-get -qq update
     sudo apt-get install -y wget
 elif [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
     sudo brew update
     sudo brew install wget
-else 
+else
     echo "Unsupported OS: $TRAVIS_OS_NAME"
     exit 1
 fi
@@ -28,11 +28,8 @@ export SFDX_NPM_REGISTRY=http://ec2-54-152-120-49.compute-1.amazonaws.com:4873/
 mkdir -p $HOME/.config/sfdx/
 echo "[\"salesforce-alm\"]" >> $HOME/.config/sfdx/unsignedPluginWhiteList.json
 
-wget -qO- $URL | tar xJf -
-"./sfdx/install"
+npm install -g sfdx-cli
 
 export PATH=./sfdx/$(pwd):$PATH
-sfdx update master
-sfdx plugins:install salesforce-alm
 sfdx --version
 sfdx plugins --core
