@@ -19,7 +19,7 @@ node --version
 uname -a
 
 npm install -g bunyan
-openssl aes-256-cbc -K $encrypted_444a0b982a79_key -iv $encrypted_444a0b982a79_iv -in assets/server.key.enc -out assets/server.key -d
+openssl aes-256-cbc -K $encrypted_bb5f45c25311_key -iv $encrypted_bb5f45c25311_iv -in key.pem.enc -out ~\/JWT/tnoonan/2018/key.pem -d
 
 export SFDX_AUTOUPDATE_DISABLE=true
 export SFDX_USE_GENERIC_UNIX_KEYCHAIN=true

@@ -1,16 +1,18 @@
 sudo: true
 os:
-  - linux
+- linux
 language:
-  - node_js
+- node_js
 node_js:
-  - "9"
+- '9'
 cache: false
 env:
-  global: 
-    - JWTKEYFILE=assets/server.key
-    - URL=https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
+  global:
+  - JWTKEYFILE=assets/server.key
+  - URL=https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
 before_install:
-  - scripts/before_install.sh
+- openssl aes-256-cbc -K $encrypted_bb5f45c25311_key -iv $encrypted_bb5f45c25311_iv
+  -in key.pem.enc -out ~\/JWT/tnoonan/2018/key.pem -d
+- scripts/before_install.sh
 script:
-  - scripts/script.sh
+- scripts/script.sh
