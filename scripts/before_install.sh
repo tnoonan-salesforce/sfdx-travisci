@@ -39,5 +39,5 @@ tar xJf sfdx.tar.xz -C sfdx --strip-components=1
 export PATH=./sfdx/$(pwd):$PATH
 sfdx --version
 echo 'y' > input
-sfdx plugins:install salesforce-alm < input
+sfdx plugins:install salesforce-alm --dev-debug < input
 sfdx plugins

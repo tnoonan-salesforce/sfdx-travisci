@@ -3,7 +3,7 @@
 set -x
 
 # auth
-sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile $JWTKEYFILE --username $DEVHUB_USERNAME --setdefaultdevhubusername -a HubOrg
+sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile $JWTKEYFILE --username $DEVHUB_USERNAME --setdefaultdevhubusername -a HubOrg --dev-debug
 
 # Create or org
 sfdx force:org:create -v HubOrg -s -f config/project-scratch-def.json -a ciorg --dev-debug
