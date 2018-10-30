@@ -32,4 +32,4 @@ echo 'y' > input
 export PATH=./sfdx/$(pwd):$PATH
 sfdx --version
 sfdx plugins:install salesforce-alm < input
-sfdx plugins --core
+sfdx plugins
