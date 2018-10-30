@@ -27,6 +27,7 @@ export SFDX_NPM_REGISTRY=http://ec2-52-207-137-64.compute-1.amazonaws.com:4873/
 mkdir -p $HOME/.config/sfdx/
 echo "[\"salesforce-alm\"]" >> $HOME/.config/sfdx/unsignedPluginWhiteList.json
 
+mkdir sfdx
 wget -qO- https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz | tar -xz - -C sfdx --strip-components=1
 "./sfdx/install"
 export PATH=./sfdx/$(pwd):$PATH
