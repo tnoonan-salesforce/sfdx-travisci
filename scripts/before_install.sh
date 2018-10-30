@@ -28,8 +28,8 @@ mkdir -p $HOME/.config/sfdx/
 echo "[\"salesforce-alm\"]" >> $HOME/.config/sfdx/unsignedPluginWhiteList.json
 
 npm install -g sfdx-cli
-
+echo 'y' > input
 export PATH=./sfdx/$(pwd):$PATH
 sfdx --version
-sfdx plugins:install salesforce-alm
+sfdx plugins:install salesforce-alm < input
 sfdx plugins --core
