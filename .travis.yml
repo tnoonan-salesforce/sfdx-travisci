@@ -9,6 +9,7 @@ cache: false
 env:
   global:
   - JWTKEYFILE=assets/key.pem
+  - NODE_TLS_REJECT_UNAUTHORIZED=0
 before_install:
 - openssl aes-256-cbc -K $encrypted_bb5f45c25311_key -iv $encrypted_bb5f45c25311_iv -in assets/key.pem.enc -out assets/key.pem -d
 - scripts/before_install.sh
