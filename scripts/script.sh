@@ -2,8 +2,8 @@
 
 set -x
 
-export HTTP_PROXY=http://ec2-34-201-92-203.compute-1.amazonaws.com:8080
-export HTTPS_PROXY=http://ec2-34-201-92-203.compute-1.amazonaws.com:8080
+# export HTTP_PROXY=http://ec2-34-201-92-203.compute-1.amazonaws.com:8080
+# export HTTPS_PROXY=http://ec2-34-201-92-203.compute-1.amazonaws.com:8080
 
 # auth
 sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile $JWTKEYFILE --username $DEVHUB_USERNAME --setdefaultdevhubusername -a HubOrg --dev-debug
