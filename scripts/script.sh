@@ -17,7 +17,8 @@ if [ $? -ne 0 ]; then
 fi
 
 # push source
-sfdx force:source:push -u ciorg && sfdx force:apex:test:run -u ciorg -c -r human --dev-debug
+sfdx force:source:push -u ciorg
+sfdx force:apex:test:run -u ciorg -c -r human
 
 # delete the org
 sfdx force:org:delete -u ciorg -p
