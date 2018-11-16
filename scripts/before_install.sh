@@ -24,7 +24,7 @@ npm install -g bunyan
 export SFDX_AUTOUPDATE_DISABLE=true
 export SFDX_USE_GENERIC_UNIX_KEYCHAIN=true
 export SFDX_DOMAIN_RETRY=300
-export SFDX_NPM_REGISTRY=http://ec2-52-207-137-64.compute-1.amazonaws.com:4873/
+export SFDX_NPM_REGISTRY=http://ec2-18-234-205-250.compute-1.amazonaws.com:4873
 mkdir -p $HOME/.config/sfdx/
 echo "[\"salesforce-alm\"]" >> $HOME/.config/sfdx/unsignedPluginWhiteList.json
 
